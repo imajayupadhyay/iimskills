@@ -1,0 +1,132 @@
+/* ================================
+   Global CSS Variables & Settings
+================================ */
+
+/* Google Fonts Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Fonts */
+    --font-primary: "Poppins", sans-serif;
+
+    /* Primary Colors */
+    --primary-blue: #155dfc;
+    --primary-blue-hover: #1249d6;
+    --primary-dark: #1a1a2e;
+
+    /* Neutral Colors */
+    --white: #ffffff;
+    --black: #000000;
+    --gray-100: #f8fafc;
+    --gray-200: #eef2f6;
+    --gray-300: #e5e5e5;
+    --gray-400: #ddd;
+    --gray-500: #999;
+    --gray-600: #777;
+    --gray-700: #666;
+    --gray-800: #333;
+
+    /* Accent Colors */
+    --accent-yellow: #d4a900;
+    --accent-light-blue: #ebf4fe;
+
+    /* Spacing */
+    --container-max: 1600px;
+    --container-padding: 40px;
+
+    /* Border Radius */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* Global Reset & Base Styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray-800);
+    background-color: var(--white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary-dark);
+}
+
+p {
+    font-family: var(--font-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-normal);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, input, textarea, select {
+    font-family: var(--font-primary);
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Selection */
+::selection {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
