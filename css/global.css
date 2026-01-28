@@ -252,12 +252,17 @@ button {
     transform: translateY(-10px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
+    pointer-events: none;
 }
 
-.nav-item.has-mega-menu:hover .mega-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+/* Desktop: Show mega menu on hover (only works on desktop) */
+@media (min-width: 901px) {
+    .nav-item.has-mega-menu:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
 }
 
 .mega-menu-container {
@@ -457,6 +462,10 @@ button {
     }
 
     /* Mega Menu Mobile */
+    .nav-item.has-mega-menu {
+        position: relative;
+    }
+
     .mega-menu {
         position: static;
         width: 100%;
@@ -469,13 +478,25 @@ button {
         max-height: 0;
         overflow: hidden;
         transition: all 0.4s ease;
-    }
-
-    .nav-item.has-mega-menu:hover .mega-menu {
         opacity: 1;
         visibility: visible;
-        max-height: 2000px;
         transform: translateY(0);
+    }
+
+    /* Mobile: Show mega menu on click (active class) */
+    .nav-item.has-mega-menu.mega-menu-active .mega-menu {
+        max-height: 2000px;
+    }
+
+    /* Disable all hover effects on mobile */
+    .nav-item.has-mega-menu:hover .mega-menu {
+        /* Override desktop hover */
+        position: static;
+        max-height: 0;
+    }
+
+    .nav-item.has-mega-menu.mega-menu-active:hover .mega-menu {
+        max-height: 2000px;
     }
 
     .mega-menu-container {

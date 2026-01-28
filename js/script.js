@@ -7,8 +7,8 @@ hamburger.addEventListener('click', () => {
     nav.classList.toggle('active');
 });
 
-// Close menu when clicking on a nav link (mobile)
-const navLinks = document.querySelectorAll('.nav-item a');
+// Close menu when clicking on a nav link (mobile) - except mega menu items
+const navLinks = document.querySelectorAll('.nav-item:not(.has-mega-menu) a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth <= 900) {
@@ -16,6 +16,47 @@ navLinks.forEach(link => {
             nav.classList.remove('active');
         }
     });
+});
+
+// Mega Menu Toggle for Mobile (Click) and Desktop (Hover)
+const megaMenuItems = document.querySelectorAll('.nav-item.has-mega-menu');
+
+megaMenuItems.forEach(item => {
+    const link = item.querySelector('a');
+    const megaMenu = item.querySelector('.mega-menu');
+    
+    if (link && megaMenu) {
+        // Click handler for mobile
+        link.addEventListener('click', function(e) {
+            // Only prevent default and toggle on mobile
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+                
+                // Close other mega menus
+                megaMenuItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('mega-menu-active');
+                    }
+                });
+                
+                // Toggle current mega menu
+                item.classList.toggle('mega-menu-active');
+            }
+        });
+    }
+});
+
+// Handle window resize - remove active states when switching to desktop
+let resizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+        if (window.innerWidth > 900) {
+            megaMenuItems.forEach(item => {
+                item.classList.remove('mega-menu-active');
+            });
+        }
+    }, 250);
 });
 
 // Close menu when clicking outside
