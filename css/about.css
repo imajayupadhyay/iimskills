@@ -1,0 +1,20 @@
+.about-placeholder {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 0;
+    color: var(--gray-600);
+}
+
+.about-placeholder .container {
+    width: 100%;
+    max-width: var(--container-max);
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+}
+
+.about-placeholder h1 {
+    margin-bottom: 12px;
+}
