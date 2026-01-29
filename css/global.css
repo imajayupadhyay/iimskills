@@ -270,8 +270,8 @@ button {
     margin: 0 auto;
     padding: 60px 40px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 80px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
 }
 
 /* Mega Menu Column */
