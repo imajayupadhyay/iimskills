@@ -376,3 +376,43 @@ function handleSwipe() {
 if (projectCards.length > 0) {
     startAutoSlide();
 }
+
+// ========================================
+// Course Info Tabs
+// ========================================
+const tabButtons = document.querySelectorAll('.info-tab-btn');
+const tabPanels = document.querySelectorAll('.info-tab-panel');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+
+        // Remove active class from all buttons and panels
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabPanels.forEach(panel => panel.classList.remove('active'));
+
+        // Add active class to clicked button and corresponding panel
+        button.classList.add('active');
+        document.getElementById(targetTab)?.classList.add('active');
+    });
+});
+
+// Keyboard navigation for tabs
+tabButtons.forEach((button, index) => {
+    button.addEventListener('keydown', (e) => {
+        let newIndex;
+
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            newIndex = index + 1 >= tabButtons.length ? 0 : index + 1;
+        } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+            e.preventDefault();
+            newIndex = index - 1 < 0 ? tabButtons.length - 1 : index - 1;
+        }
+
+        if (newIndex !== undefined) {
+            tabButtons[newIndex].click();
+            tabButtons[newIndex].focus();
+        }
+    });
+});
