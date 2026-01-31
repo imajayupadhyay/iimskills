@@ -858,6 +858,510 @@
 }
 
 /* ========================================
+   Curriculum Section
+   ======================================== */
+.curriculum-section {
+    padding: 80px 0 100px;
+    background: #f8fafc;
+}
+
+.curriculum-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Section Header */
+.curriculum-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.curriculum-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ef4444;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.curriculum-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.curriculum-title span {
+    color: #155dfc;
+    text-decoration: underline;
+    text-decoration-color: #155dfc;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+}
+
+.curriculum-subtitle {
+    font-size: 16px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.curriculum-subtitle strong {
+    color: #1a1a2e;
+}
+
+/* Action Buttons */
+.curriculum-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.btn-expand,
+.btn-collapse {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-expand {
+    background: linear-gradient(135deg, #155dfc 0%, #3b82f6 100%);
+    color: #fff;
+    border: none;
+}
+
+.btn-expand:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(21, 93, 252, 0.3);
+}
+
+.btn-collapse {
+    background: #fff;
+    color: #1a1a2e;
+    border: 1px solid #e5e5e5;
+}
+
+.btn-collapse:hover {
+    border-color: #155dfc;
+    color: #155dfc;
+}
+
+/* Main Content Layout */
+.curriculum-content {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Modules Section (Left) */
+.curriculum-modules {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.modules-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #155dfc;
+    margin-bottom: 24px;
+}
+
+.modules-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modules-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.modules-count {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.essential-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: #fef3c7;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #92400e;
+}
+
+/* Accordion Modules */
+.modules-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.module-item {
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.module-item:hover {
+    border-color: #c7d2fe;
+    box-shadow: 0 4px 15px rgba(21, 93, 252, 0.08);
+}
+
+.module-item.active {
+    border-color: #155dfc;
+    box-shadow: 0 4px 20px rgba(21, 93, 252, 0.12);
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.module-header:hover {
+    background: #f8fafc;
+}
+
+.module-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.module-info {
+    flex: 1;
+}
+
+.module-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.module-meta {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.module-toggle {
+    width: 36px;
+    height: 36px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.module-toggle:hover {
+    background: #155dfc;
+    color: #fff;
+}
+
+.module-item.active .module-toggle {
+    background: #155dfc;
+    color: #fff;
+}
+
+.module-item.active .module-toggle svg {
+    transform: rotate(180deg);
+}
+
+/* Module Content */
+.module-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.module-item.active .module-content {
+    max-height: 500px;
+}
+
+.content-block {
+    display: flex;
+    gap: 16px;
+    padding: 0 20px 24px 84px;
+}
+
+.content-dot {
+    width: 8px;
+    height: 8px;
+    background: #155dfc;
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.content-details h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.content-details p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Tech Stack */
+.tech-stack {
+    margin-bottom: 16px;
+}
+
+.stack-label,
+.outcomes-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.stack-tag {
+    padding: 6px 12px;
+    background: #f8fafc;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Key Outcomes */
+.outcomes-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.outcome-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.outcome-tag.blue {
+    background: rgba(21, 93, 252, 0.1);
+    color: #155dfc;
+}
+
+.outcome-tag.purple {
+    background: rgba(139, 92, 246, 0.1);
+    color: #7c3aed;
+}
+
+/* Sidebar (Right - Sticky) */
+.curriculum-sidebar {
+    position: relative;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Syllabus Button */
+.syllabus-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.syllabus-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+/* Sidebar Cards */
+.sidebar-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.sidebar-card .card-header span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+/* Highlights Card */
+.highlights-card {
+    border-top: 4px solid #f97316;
+}
+
+.highlights-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.highlights-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Counseling Card */
+.counseling-card {
+    background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%);
+    color: #fff;
+}
+
+.counseling-card .card-header span {
+    color: #fff;
+}
+
+.counseling-card p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.callback-btn {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.callback-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Certification Card */
+.certification-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+    color: #fff;
+}
+
+.certification-card .card-header span {
+    color: #fff;
+}
+
+.certification-card p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.certification-card strong {
+    color: #60a5fa;
+}
+
+.cert-logos {
+    display: flex;
+    gap: 12px;
+}
+
+.cert-logo {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========================================
    Main Content Area
    ======================================== */
 .course-detail-main {
@@ -924,6 +1428,24 @@
     .place-desc {
         font-size: 10px;
     }
+
+    /* Curriculum Section */
+    .curriculum-title {
+        font-size: 36px;
+    }
+
+    .curriculum-content {
+        grid-template-columns: 1fr 280px;
+        gap: 30px;
+    }
+
+    .curriculum-modules {
+        padding: 24px;
+    }
+
+    .module-info h4 {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -978,6 +1500,31 @@
     .feature-icon svg {
         width: 16px;
         height: 16px;
+    }
+
+    /* Curriculum Section */
+    .curriculum-section {
+        padding: 60px 0 80px;
+    }
+
+    .curriculum-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sidebar-sticky {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .syllabus-btn {
+        grid-column: span 2;
+    }
+
+    .curriculum-actions {
+        flex-wrap: wrap;
     }
 }
 
@@ -1246,6 +1793,70 @@
         width: 100%;
         justify-content: center;
     }
+
+    /* Curriculum Section */
+    .curriculum-container {
+        padding: 0 20px;
+    }
+
+    .curriculum-header {
+        margin-bottom: 40px;
+    }
+
+    .curriculum-title {
+        font-size: 28px;
+    }
+
+    .curriculum-subtitle {
+        font-size: 14px;
+    }
+
+    .curriculum-modules {
+        padding: 20px;
+    }
+
+    .modules-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .modules-title {
+        font-size: 20px;
+    }
+
+    .module-header {
+        padding: 16px;
+    }
+
+    .module-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .module-info h4 {
+        font-size: 14px;
+    }
+
+    .content-block {
+        padding: 0 16px 20px 58px;
+    }
+
+    .content-details h5 {
+        font-size: 16px;
+    }
+
+    .sidebar-sticky {
+        grid-template-columns: 1fr;
+    }
+
+    .syllabus-btn {
+        grid-column: span 1;
+    }
+
+    .sidebar-card {
+        padding: 20px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1361,6 +1972,85 @@
 
     .cta-text p {
         font-size: 13px;
+    }
+
+    /* Curriculum Section */
+    .curriculum-section {
+        padding: 40px 0 60px;
+    }
+
+    .curriculum-container {
+        padding: 0 15px;
+    }
+
+    .curriculum-tag {
+        font-size: 10px;
+    }
+
+    .curriculum-title {
+        font-size: 24px;
+    }
+
+    .btn-expand,
+    .btn-collapse {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .curriculum-modules {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .module-header {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .module-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .module-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .module-info h4 {
+        font-size: 13px;
+    }
+
+    .module-meta {
+        font-size: 10px;
+    }
+
+    .module-toggle {
+        width: 32px;
+        height: 32px;
+    }
+
+    .content-block {
+        padding: 0 14px 18px 50px;
+        gap: 12px;
+    }
+
+    .content-details h5 {
+        font-size: 15px;
+    }
+
+    .content-details p {
+        font-size: 13px;
+    }
+
+    .stack-tag {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .outcome-tag {
+        padding: 6px 12px;
+        font-size: 10px;
     }
 }
 

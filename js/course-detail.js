@@ -70,3 +70,45 @@ document.addEventListener('click', (e) => {
         nav.classList.remove('active');
     }
 });
+
+// ========================================
+// Curriculum Module Accordion
+// ========================================
+const moduleItems = document.querySelectorAll('.module-item');
+const expandAllBtn = document.getElementById('expandAll');
+const collapseAllBtn = document.getElementById('collapseAll');
+
+// Toggle individual module
+moduleItems.forEach(item => {
+    const header = item.querySelector('.module-header');
+
+    header.addEventListener('click', () => {
+        // Close other modules (optional - remove if you want multiple open)
+        // moduleItems.forEach(otherItem => {
+        //     if (otherItem !== item) {
+        //         otherItem.classList.remove('active');
+        //     }
+        // });
+
+        // Toggle current module
+        item.classList.toggle('active');
+    });
+});
+
+// Expand All
+if (expandAllBtn) {
+    expandAllBtn.addEventListener('click', () => {
+        moduleItems.forEach(item => {
+            item.classList.add('active');
+        });
+    });
+}
+
+// Collapse All
+if (collapseAllBtn) {
+    collapseAllBtn.addEventListener('click', () => {
+        moduleItems.forEach(item => {
+            item.classList.remove('active');
+        });
+    });
+}
