@@ -1362,6 +1362,256 @@
 }
 
 /* ========================================
+   Skills You Will Master Section
+   ======================================== */
+.skills-master-section {
+    padding: 80px 0 100px;
+    background: #fff;
+}
+
+.skills-master-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Section Header */
+.skills-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skills-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ef4444;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.skills-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.skills-title span {
+    color: #155dfc;
+}
+
+.skills-subtitle {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Rainbow Gradient Line */
+.rainbow-line {
+    height: 6px;
+    background: linear-gradient(90deg,
+        #3b82f6 0%,
+        #6366f1 20%,
+        #8b5cf6 40%,
+        #ec4899 60%,
+        #f97316 80%,
+        #eab308 100%
+    );
+    border-radius: 3px;
+    margin-bottom: 50px;
+}
+
+/* Core Modules */
+.core-modules {
+    margin-bottom: 50px;
+}
+
+.core-modules-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Skill Card Base */
+.skill-card {
+    padding: 30px 24px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.skill-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Card Color Variants */
+.card-purple {
+    background: linear-gradient(135deg, #f3e8ff 0%, #ede9fe 100%);
+}
+.card-purple .skill-icon {
+    color: #8b5cf6;
+}
+
+.card-yellow {
+    background: linear-gradient(135deg, #fef9c3 0%, #fef3c7 100%);
+}
+.card-yellow .skill-icon {
+    color: #ca8a04;
+}
+
+.card-mint {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+}
+.card-mint .skill-icon {
+    color: #059669;
+}
+
+.card-green {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+}
+.card-green .skill-icon {
+    color: #16a34a;
+}
+
+.card-lavender {
+    background: linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
+}
+.card-lavender .skill-icon {
+    color: #9333ea;
+}
+
+.card-pink {
+    background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+}
+.card-pink .skill-icon {
+    color: #db2777;
+}
+
+.card-cyan {
+    background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
+}
+.card-cyan .skill-icon {
+    color: #0891b2;
+}
+
+.card-peach {
+    background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+}
+.card-peach .skill-icon {
+    color: #ea580c;
+}
+
+.card-gray {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+.card-gray .skill-icon {
+    color: #4b5563;
+}
+
+.card-blue {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+}
+.card-blue .skill-icon {
+    color: #2563eb;
+}
+
+/* CTA Banner */
+.skills-cta-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+    border-radius: 20px;
+    gap: 40px;
+}
+
+.cta-banner-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.cta-banner-content p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    max-width: 550px;
+}
+
+.cta-banner-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: #fff;
+    color: #ea580c;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.cta-banner-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
    Main Content Area
    ======================================== */
 .course-detail-main {
@@ -1446,6 +1696,36 @@
     .module-info h4 {
         font-size: 15px;
     }
+
+    /* Skills Master Section */
+    .skills-title {
+        font-size: 36px;
+    }
+
+    .skills-grid {
+        gap: 16px;
+    }
+
+    .skill-card {
+        padding: 24px 20px;
+    }
+
+    .skill-card h4 {
+        font-size: 15px;
+    }
+
+    .skill-icon {
+        width: 54px;
+        height: 54px;
+    }
+
+    .skills-cta-banner {
+        padding: 35px 40px;
+    }
+
+    .cta-banner-content h3 {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -1525,6 +1805,35 @@
 
     .curriculum-actions {
         flex-wrap: wrap;
+    }
+
+    /* Skills Master Section */
+    .skills-master-section {
+        padding: 60px 0 80px;
+    }
+
+    .skills-master-container {
+        padding: 0 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .skills-cta-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 30px;
+    }
+
+    .cta-banner-content p {
+        max-width: 100%;
+    }
+
+    .cta-banner-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -1857,6 +2166,55 @@
     .sidebar-card {
         padding: 20px;
     }
+
+    /* Skills Master Section */
+    .skills-master-container {
+        padding: 0 20px;
+    }
+
+    .skills-title {
+        font-size: 28px;
+    }
+
+    .skills-subtitle {
+        font-size: 14px;
+    }
+
+    .core-modules-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .skill-card {
+        padding: 24px 18px;
+    }
+
+    .skill-card h4 {
+        font-size: 14px;
+    }
+
+    .skill-card p {
+        font-size: 12px;
+    }
+
+    .skill-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 16px;
+    }
+
+    .skill-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .cta-banner-content h3 {
+        font-size: 22px;
+    }
+
+    .cta-banner-content p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -2052,6 +2410,81 @@
         padding: 6px 12px;
         font-size: 10px;
     }
+
+    /* Skills Master Section */
+    .skills-master-section {
+        padding: 40px 0 60px;
+    }
+
+    .skills-master-container {
+        padding: 0 15px;
+    }
+
+    .skills-tag {
+        font-size: 10px;
+    }
+
+    .skills-title {
+        font-size: 24px;
+    }
+
+    .rainbow-line {
+        height: 4px;
+        margin-bottom: 40px;
+    }
+
+    .core-modules-title {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .skills-grid {
+        gap: 12px;
+    }
+
+    .skill-card {
+        padding: 20px 14px;
+        border-radius: 12px;
+    }
+
+    .skill-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 10px;
+    }
+
+    .skill-card h4 {
+        font-size: 13px;
+    }
+
+    .skill-tag {
+        font-size: 9px;
+        margin-bottom: 8px;
+    }
+
+    .skill-card p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .skills-cta-banner {
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+
+    .cta-banner-content h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .cta-banner-content p {
+        font-size: 13px;
+    }
+
+    .cta-banner-btn {
+        padding: 14px 24px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2168,5 +2601,56 @@
     .cta-button {
         padding: 12px 24px;
         font-size: 13px;
+    }
+
+    /* Skills Master Section */
+    .skills-title {
+        font-size: 22px;
+    }
+
+    .core-modules-title {
+        font-size: 18px;
+    }
+
+    .skill-card {
+        padding: 18px 12px;
+    }
+
+    .skill-icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 14px;
+    }
+
+    .skill-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .skill-card h4 {
+        font-size: 12px;
+    }
+
+    .skill-card p {
+        font-size: 10px;
+    }
+
+    .cta-banner-content h3 {
+        font-size: 18px;
+    }
+
+    .cta-banner-content p {
+        font-size: 12px;
+    }
+
+    .cta-banner-btn {
+        padding: 12px 20px;
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .cta-banner-btn svg {
+        width: 18px;
+        height: 18px;
     }
 }
