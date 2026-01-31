@@ -5136,3 +5136,355 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ========================================
+   Recruiter Feedback Section
+   ======================================== */
+.recruiter-feedback-section {
+    padding: 80px 0 100px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    overflow: hidden;
+}
+
+.recruiter-feedback-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.recruiter-feedback-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.recruiter-feedback-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ef4444;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.recruiter-feedback-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.recruiter-feedback-title span {
+    color: #155dfc;
+}
+
+.recruiter-feedback-subtitle {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Slider Wrapper - Full Width */
+.recruiter-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Gradient Fade Edges */
+.recruiter-slider-wrapper::before,
+.recruiter-slider-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.recruiter-slider-wrapper::before {
+    left: 0;
+    background: linear-gradient(90deg, #f8fafc 0%, transparent 100%);
+}
+
+.recruiter-slider-wrapper::after {
+    right: 0;
+    background: linear-gradient(270deg, #f8fafc 0%, transparent 100%);
+}
+
+/* Slider Track - Infinite Animation */
+.recruiter-slider-track {
+    display: flex;
+    gap: 30px;
+    animation: scrollSlider 30s linear infinite;
+    width: max-content;
+}
+
+.recruiter-slider-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollSlider {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Recruiter Card */
+.recruiter-card {
+    flex-shrink: 0;
+    width: 320px;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.recruiter-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Header - Company Branding */
+.recruiter-card-header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 24px;
+    position: relative;
+}
+
+/* Company Color Variants */
+.recruiter-card-header.barclays {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+.recruiter-card-header.ey {
+    background: linear-gradient(135deg, #2e5bff 0%, #1e40af 100%);
+}
+
+.recruiter-card-header.algebra {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+}
+
+.company-logo-white {
+    height: 28px;
+    filter: brightness(0) invert(1);
+}
+
+.company-logo-dark {
+    height: 32px;
+    filter: brightness(0) invert(1);
+}
+
+.company-name {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.company-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+/* Card Body */
+.recruiter-card-body {
+    padding: 0 24px 28px;
+    text-align: center;
+    position: relative;
+}
+
+/* Avatar - Overlapping Header */
+.recruiter-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: -45px auto 16px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.recruiter-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Name & Position */
+.recruiter-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.recruiter-position {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* Star Rating */
+.recruiter-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.recruiter-rating svg {
+    width: 18px;
+    height: 18px;
+    fill: #f59e0b;
+}
+
+.recruiter-rating.blue svg {
+    fill: #3b82f6;
+}
+
+/* Quote Section */
+.recruiter-quote {
+    position: relative;
+    padding: 0 10px;
+}
+
+.quote-icon {
+    font-family: Georgia, serif;
+    font-size: 60px;
+    line-height: 1;
+    color: #f0f0f0;
+    position: absolute;
+}
+
+.quote-icon.open {
+    top: -20px;
+    left: -5px;
+}
+
+.quote-icon.close {
+    bottom: -35px;
+    right: -5px;
+    color: #ef4444;
+    opacity: 0.3;
+}
+
+.recruiter-quote p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .recruiter-feedback-title {
+        font-size: 36px;
+    }
+
+    .recruiter-slider-wrapper::before,
+    .recruiter-slider-wrapper::after {
+        width: 80px;
+    }
+
+    .recruiter-card {
+        width: 290px;
+    }
+}
+
+@media (max-width: 768px) {
+    .recruiter-feedback-section {
+        padding: 60px 0 80px;
+    }
+
+    .recruiter-feedback-header {
+        margin-bottom: 40px;
+    }
+
+    .recruiter-feedback-title {
+        font-size: 28px;
+    }
+
+    .recruiter-feedback-subtitle {
+        font-size: 14px;
+    }
+
+    .recruiter-slider-wrapper::before,
+    .recruiter-slider-wrapper::after {
+        width: 40px;
+    }
+
+    .recruiter-card {
+        width: 280px;
+    }
+
+    .recruiter-slider-track {
+        gap: 20px;
+        animation-duration: 25s;
+    }
+}
+
+@media (max-width: 480px) {
+    .recruiter-feedback-container {
+        padding: 0 20px;
+    }
+
+    .recruiter-feedback-title {
+        font-size: 24px;
+    }
+
+    .recruiter-card {
+        width: 260px;
+    }
+
+    .recruiter-card-header {
+        height: 85px;
+    }
+
+    .recruiter-avatar {
+        width: 80px;
+        height: 80px;
+        margin-top: -40px;
+    }
+
+    .recruiter-name {
+        font-size: 16px;
+    }
+
+    .recruiter-quote p {
+        font-size: 13px;
+    }
+}
