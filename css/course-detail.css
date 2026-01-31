@@ -468,6 +468,396 @@
 }
 
 /* ========================================
+   Placement Record Section
+   ======================================== */
+.placement-record {
+    padding: 80px 0 100px;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.placement-record-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Header */
+.placement-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.placement-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ef4444;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.placement-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.placement-title span {
+    color: #155dfc;
+}
+
+.placement-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Stats Bar */
+.placement-stats-bar {
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+.placement-stat {
+    flex: 1;
+    padding: 40px 30px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.placement-stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat-purple {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+}
+
+.stat-red {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.stat-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.stat-orange {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.placement-stat .stat-value {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.placement-stat .stat-text {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    letter-spacing: 0.3px;
+}
+
+/* Dotted Pattern */
+.placement-dots-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* ========================================
+   Designed for Employment Section
+   ======================================== */
+.employment-section {
+    padding: 80px 0 100px;
+    background: #fff;
+}
+
+.employment-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Section Header */
+.employment-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.employment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 50px;
+    color: #1a1a2e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.employment-badge svg {
+    color: #f59e0b;
+}
+
+.employment-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.employment-title span {
+    color: #155dfc;
+    text-decoration: underline;
+    text-decoration-color: #155dfc;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+}
+
+.employment-subtitle {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* P.L.A.C.E. Cards */
+.place-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+.place-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.place-card:hover {
+    border-color: #155dfc;
+    box-shadow: 0 8px 30px rgba(21, 93, 252, 0.1);
+    transform: translateY(-5px);
+}
+
+.place-letter {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #155dfc;
+    margin-bottom: 8px;
+}
+
+.place-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+}
+
+.place-desc {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+}
+
+/* Comparison Table */
+.comparison-table {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Table Header */
+.comparison-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1.3fr;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.comparison-header .comparison-col {
+    padding: 20px 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #1a1a2e;
+}
+
+.comparison-header .col-iim {
+    color: #155dfc;
+    border-left: 1px solid #e5e5e5;
+}
+
+.comparison-header .col-others {
+    color: #888;
+    border-left: 1px solid #e5e5e5;
+}
+
+/* Table Rows */
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1.3fr;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.3s ease;
+}
+
+.comparison-row:last-of-type {
+    border-bottom: none;
+}
+
+.comparison-row:hover {
+    background: #fafbfc;
+}
+
+.comparison-col {
+    padding: 24px 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.comparison-col.col-iim {
+    border-left: 1px solid #f0f0f0;
+    color: #1a1a2e;
+}
+
+.comparison-col.col-others {
+    border-left: 1px solid #f0f0f0;
+    color: #666;
+}
+
+.col-feature {
+    font-weight: 500;
+    color: #1a1a2e;
+}
+
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(21, 93, 252, 0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.check-icon,
+.cross-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* CTA Banner */
+.comparison-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 30px;
+    background: linear-gradient(135deg, #155dfc 0%, #3b82f6 100%);
+    border-radius: 0 0 16px 16px;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cta-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.cta-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.cta-text p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #fff;
+    color: #155dfc;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button svg {
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* ========================================
    Main Content Area
    ======================================== */
 .course-detail-main {
@@ -496,6 +886,44 @@
     .course-detail-container {
         padding: 0 30px;
     }
+
+    /* Placement Record */
+    .placement-title {
+        font-size: 36px;
+    }
+
+    .placement-stat .stat-value {
+        font-size: 36px;
+    }
+
+    .placement-stat {
+        padding: 35px 25px;
+    }
+
+    /* Employment Section */
+    .employment-title {
+        font-size: 36px;
+    }
+
+    .place-cards {
+        gap: 12px;
+    }
+
+    .place-card {
+        padding: 25px 15px;
+    }
+
+    .place-letter {
+        font-size: 30px;
+    }
+
+    .place-title {
+        font-size: 14px;
+    }
+
+    .place-desc {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -516,6 +944,41 @@
     .hero-stats {
         justify-content: flex-start;
     }
+
+    /* Employment Section */
+    .place-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .place-cards .place-card:nth-child(4),
+    .place-cards .place-card:nth-child(5) {
+        grid-column: span 1;
+    }
+
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1fr 1.2fr 1fr;
+    }
+
+    .comparison-col {
+        padding: 20px;
+        font-size: 13px;
+    }
+
+    .comparison-header .comparison-col {
+        padding: 16px 20px;
+        font-size: 11px;
+    }
+
+    .feature-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .feature-icon svg {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -529,6 +992,62 @@
 
     .course-detail-main {
         padding: 40px 0 60px;
+    }
+
+    /* Placement Record */
+    .placement-record {
+        padding: 60px 0 80px;
+    }
+
+    .placement-record-container {
+        padding: 0 30px;
+    }
+
+    .placement-stats-bar {
+        flex-wrap: wrap;
+        border-radius: 12px;
+    }
+
+    .placement-stat {
+        flex: 1 1 50%;
+        padding: 30px 20px;
+    }
+
+    .placement-stat .stat-value {
+        font-size: 32px;
+    }
+
+    .placement-stat .stat-text {
+        font-size: 13px;
+    }
+
+    /* Employment Section */
+    .employment-section {
+        padding: 60px 0 80px;
+    }
+
+    .employment-container {
+        padding: 0 30px;
+    }
+
+    .place-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .place-cards .place-card:last-child {
+        grid-column: span 2;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .comparison-table {
+        overflow-x: auto;
+    }
+
+    .comparison-header,
+    .comparison-row {
+        min-width: 700px;
     }
 }
 
@@ -625,6 +1144,108 @@
     .course-detail-container {
         padding: 0 20px;
     }
+
+    /* Placement Record */
+    .placement-record {
+        padding: 50px 0 70px;
+    }
+
+    .placement-record-container {
+        padding: 0 20px;
+    }
+
+    .placement-header {
+        margin-bottom: 40px;
+    }
+
+    .placement-tag {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .placement-title {
+        font-size: 28px;
+    }
+
+    .placement-description {
+        font-size: 14px;
+    }
+
+    .placement-stat {
+        padding: 25px 15px;
+    }
+
+    .placement-stat .stat-value {
+        font-size: 28px;
+    }
+
+    .placement-stat .stat-text {
+        font-size: 12px;
+    }
+
+    .placement-dots-pattern {
+        height: 40px;
+    }
+
+    /* Employment Section */
+    .employment-container {
+        padding: 0 20px;
+    }
+
+    .employment-header {
+        margin-bottom: 40px;
+    }
+
+    .employment-badge {
+        font-size: 10px;
+        padding: 8px 16px;
+    }
+
+    .employment-title {
+        font-size: 28px;
+    }
+
+    .employment-subtitle {
+        font-size: 14px;
+    }
+
+    .place-cards {
+        margin-bottom: 40px;
+    }
+
+    .place-card {
+        padding: 20px 15px;
+    }
+
+    .place-letter {
+        font-size: 28px;
+    }
+
+    .place-title {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .place-desc {
+        font-size: 9px;
+    }
+
+    .comparison-cta {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 24px 20px;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 600px) {
@@ -682,6 +1303,65 @@
     .course-detail-container {
         padding: 0 15px;
     }
+
+    /* Placement Record */
+    .placement-record {
+        padding: 40px 0 60px;
+    }
+
+    .placement-record-container {
+        padding: 0 15px;
+    }
+
+    .placement-title {
+        font-size: 24px;
+    }
+
+    .placement-description {
+        font-size: 13px;
+    }
+
+    .placement-stats-bar {
+        border-radius: 10px;
+    }
+
+    .placement-stat {
+        padding: 20px 12px;
+    }
+
+    .placement-stat .stat-value {
+        font-size: 24px;
+    }
+
+    .placement-stat .stat-text {
+        font-size: 10px;
+    }
+
+    /* Employment Section */
+    .employment-section {
+        padding: 40px 0 60px;
+    }
+
+    .employment-container {
+        padding: 0 15px;
+    }
+
+    .employment-title {
+        font-size: 24px;
+    }
+
+    .place-cards .place-card:last-child {
+        max-width: 100%;
+        grid-column: span 2;
+    }
+
+    .cta-text h4 {
+        font-size: 16px;
+    }
+
+    .cta-text p {
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -713,6 +1393,90 @@
 
     .whatsapp-link {
         padding: 16px 20px;
+        font-size: 13px;
+    }
+
+    /* Placement Record */
+    .placement-tag {
+        font-size: 10px;
+    }
+
+    .placement-title {
+        font-size: 22px;
+    }
+
+    .placement-stat .stat-value {
+        font-size: 20px;
+    }
+
+    .placement-stat .stat-text {
+        font-size: 9px;
+        letter-spacing: 0;
+    }
+
+    .placement-dots-pattern {
+        height: 30px;
+        background-size: 15px 15px;
+    }
+
+    /* Employment Section */
+    .employment-badge {
+        font-size: 9px;
+        padding: 6px 12px;
+        gap: 6px;
+    }
+
+    .employment-badge svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .employment-title {
+        font-size: 22px;
+    }
+
+    .employment-title span {
+        text-underline-offset: 4px;
+        text-decoration-thickness: 2px;
+    }
+
+    .employment-subtitle {
+        font-size: 13px;
+    }
+
+    .place-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .place-card {
+        padding: 18px 12px;
+    }
+
+    .place-letter {
+        font-size: 24px;
+    }
+
+    .place-title {
+        font-size: 13px;
+    }
+
+    .place-desc {
+        font-size: 8px;
+    }
+
+    .cta-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cta-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
         font-size: 13px;
     }
 }
