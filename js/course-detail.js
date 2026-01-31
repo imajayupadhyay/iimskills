@@ -230,3 +230,149 @@ alumniCards.forEach(card => {
         }
     });
 });
+
+// ========================================
+// Live Projects Slider
+// ========================================
+const projectCards = document.querySelectorAll('.project-card');
+const sliderDots = document.querySelectorAll('.slider-dot');
+const prevBtn = document.getElementById('projectPrev');
+const nextBtn = document.getElementById('projectNext');
+const progressBar = document.getElementById('progressBar');
+
+let currentSlide = 1;
+const totalSlides = projectCards.length;
+let isAnimating = false;
+let autoSlideInterval;
+
+// Update slider
+function updateSlider(newSlide) {
+    if (isAnimating || newSlide === currentSlide) return;
+    isAnimating = true;
+
+    const currentCard = document.querySelector('.project-card.active');
+    const newCard = document.querySelector(`.project-card[data-project="${newSlide}"]`);
+
+    if (!currentCard || !newCard) {
+        isAnimating = false;
+        return;
+    }
+
+    // Simple switch with fade animation via CSS
+    currentCard.classList.remove('active');
+    newCard.classList.add('active');
+
+    isAnimating = false;
+
+    // Update dots
+    sliderDots.forEach(dot => dot.classList.remove('active'));
+    document.querySelector(`.slider-dot[data-slide="${newSlide}"]`)?.classList.add('active');
+
+    // Update progress bar
+    if (progressBar) {
+        progressBar.style.width = `${(newSlide / totalSlides) * 100}%`;
+    }
+
+    currentSlide = newSlide;
+}
+
+// Next slide
+function nextSlide() {
+    const newSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+    updateSlider(newSlide);
+}
+
+// Previous slide
+function prevSlide() {
+    const newSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+    updateSlider(newSlide);
+}
+
+// Event listeners
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+    });
+}
+
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+    });
+}
+
+// Dot navigation
+sliderDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        const slideNum = parseInt(dot.getAttribute('data-slide'));
+        updateSlider(slideNum);
+        resetAutoSlide();
+    });
+});
+
+// Auto slide
+function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000);
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    const sliderWrapper = document.querySelector('.projects-slider-wrapper');
+    if (!sliderWrapper) return;
+
+    const rect = sliderWrapper.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isVisible) {
+        if (e.key === 'ArrowRight') {
+            nextSlide();
+            resetAutoSlide();
+        } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+            resetAutoSlide();
+        }
+    }
+});
+
+// Touch/Swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+const projectsSlider = document.getElementById('projectsSlider');
+
+if (projectsSlider) {
+    projectsSlider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    projectsSlider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+        resetAutoSlide();
+    }
+}
+
+// Start auto slide if slider exists
+if (projectCards.length > 0) {
+    startAutoSlide();
+}
